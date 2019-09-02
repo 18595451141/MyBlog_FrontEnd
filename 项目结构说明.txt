@@ -1,0 +1,74 @@
+该结构整体是由vue-cli进行创建,版本：2.9.6
+
+bulid目录介绍： //webpack的配置文件(一般不用去动他)
+  --build.js              //生产环境构建
+  --check-versions.js     //版本检测(node,npm)
+  --utils.js              //构建相关工具
+  --vue-loader.conf.js    //css加载器配置
+  --webpack.base.conf.js  //webpack基础配置
+  --webpack.dev.conf.js   //在webpack.base.conf的基础上增加完善了开发环境下面的配置。
+  --webpack.prod.conf.js  //构建的时候用到的webpack配置，在webpack.base.conf基础上的进一步完善。
+
+config目录介绍： //这里也是webpack的配置文件，不过是给我们配置的
+  --dev.nev.js  //项目开发环境配置
+  --index.js  //项目主要配置(包括监听端口,打包路径等)
+  --prod.env.js //项目生产环境配置
+
+node_modules目录介绍： //依赖包 node_modules里面是项目依赖包，其中包括很多基础依赖，自己也可以根据需要安装其他依赖。安装方法为打开cmd，进入项目目录，输入npm install [依赖包名称],回车。
+
+src目录介绍：  //项目核心文件(我们所写的源代码都放在这个文件夹下)
+  -- assets         //静态资源存放目录(样式类文件，如css,less,sass,以及一些外部js文件)
+  -- components     //组件存放目录
+     -- common      //公共组件
+     -- module      //模块组件
+  -- consts         //静态变量存放目录
+  -- libs           //库文件存放目录
+  -- mock           //模拟数据接口目录
+  -- plugins        //vue插件存放目录
+  -- router         //vue路由文件存放目录(配置项目路由)
+  -- services       //业务逻辑层
+  -- store          //vuex状态管理器。模块名+Store
+  -- utils          //工具类存放目录
+  -- views          //视图文件存放目录
+  -- App.vue        //根组件
+  -- main.js        //入口文件
+
+static目录介绍： //静态资源目录 所有放在 static/目录下的文件都应该是使用绝对URL/static/[filename]引用的。
+                 //如果改成assets， 那么这些URL就会被变成 /assets/[filename]
+
+.babelrc         //babel编译参数
+.editorconfig    //代码格式
+.gitignore       //git上传需要忽略的文件配置
+.postcssrc.js    //转换css的工具
+index.html       //主页
+package.json     //项目基本信息(在创建vue-cli项目后自动生成)
+README.md        //项目说明
+
+index.html --[主页]
+如其他html一样，但一般只定义一个空的根节点，在main.js里面定义的实例将挂载在根节点下，内部都通过vue组件来填充
+
+App.vue --[根组件]
+一个vue页面通常由三部分组成：
+<!-- 模板(template) -->
+<!-- 其中模板只能包含一个父节点，也就是说顶层的div只能有一个 -->
+<template>
+
+</template>
+
+<!-- js(script) -->
+<!-- vue通常用es6来写，用export default导出，其下面可以包含数据data，生命周期(mounted等)，方法(methods)等 -->
+<script>
+
+</script>
+
+<!-- 样式 -->
+<style>
+
+</style>
+
+main.js --[入口文件]
+main.js主要是引入vue框架，根组件及路由设置，并且定义vue实例
+
+router --[路由配置]
+router文件夹下，有一个index.js，即为路由配置文件
+
