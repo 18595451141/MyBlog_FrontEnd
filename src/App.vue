@@ -1,6 +1,16 @@
 <template>
+  <div id="app">
+
+  </div>
+</template>
+<script>
+  export default {
+    name: 'app'
+  }
+</script>
+<!--<template>
   <div>
-    <button @click="test">hahaha</button> 测试跨域
+    前后端跨域示例：测试跨域=><button @click="test">hahaha</button>
     <main-header></main-header>
   </div>
 </template>
@@ -20,4 +30,4 @@
       mainHeader
     }
   }
-</script>
+</script>-->

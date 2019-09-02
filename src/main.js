@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -13,7 +15,7 @@ new Vue({
   template: '<App/>' // 这里是把'./App'的内容加到这个模板中
 })
 
-import axios from 'axios'
+
 axios.defaults.baseURL = 'http://localhost:8010/';  // 关键步骤–填写后台请求统一的地址
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 Vue.config.productionTip = false;
