@@ -1,22 +1,20 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import App from './App'
-import router from './router'
+import App from './App' /*引入App这个组件*/
+import router from './router' /*引入路由配置*/
 import axios from 'axios'
 
-Vue.config.productionTip = false
+axios.defaults.baseURL = 'http://localhost:8010/';  // 填写后台请求统一的地址实现跨域
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-/* eslint-disable no-new */
+Vue.config.productionTip = false;
+Vue.prototype.$addr = axios;
+
 new Vue({
-  el: '#app', // index.html中的id=app的div
-  router,
-  components: { App }, // 这里的App等于App: App ，名称要和模板名称一样，上面的template中写的App,这里也要是App
-  template: '<App/>' // 这里是把'./App'的内容加到这个模板中
+  el: '#app', /*最后效果将会替换页面中id为app的div元素*/
+  router, /*使用路由*/
+  components: { App }, /*告知页面这个组件用这样的标签来包裹着,并且使用它*/
+  template: '<App/>' /*告知当前页面想使用App这个组件*/
 })
 
 
-axios.defaults.baseURL = 'http://localhost:8010/';  // 关键步骤–填写后台请求统一的地址
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-Vue.config.productionTip = false;
-Vue.prototype.$addr = axios;
+

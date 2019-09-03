@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-
+    <img src="./assets/logo.png">
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -8,6 +9,12 @@
     name: 'app'
   }
 </script>
+<style>
+  #app {
+    text-align: center;
+    margin-top: 60px;
+  }
+</style>
 <!--<template>
   <div>
     前后端跨域示例：测试跨域=><button @click="test">hahaha</button>
