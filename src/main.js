@@ -1,11 +1,10 @@
 import Vue from 'vue'
 import App from './App' /*引入App这个组件*/
 import router from './router' /*引入路由配置*/
-import axios from 'axios'
+import axios from 'axios' /*支持访问后端*/
 
 axios.defaults.baseURL = 'http://localhost:8010/';  // 填写后台请求统一的地址实现跨域
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-
 Vue.config.productionTip = false;
 Vue.prototype.$addr = axios;
 
